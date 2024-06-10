@@ -1,14 +1,14 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const Geometry = () => {
+const Panda = () => {
 
     const [roas, setRoas] = useState("");
     const [totalOrder, setTotalOrder] = useState("");
     const [adCost, setAdCost] = useState("");
-    const [cancellation, setCancellation] = useState("2.6");
-    const [prepaid, setPrepaid] = useState(71);
-    const [returnVal, setReturnVal] = useState(22);
+    const [cancellation, setCancellation] = useState("");
+    const [prepaid, setPrepaid] = useState("");
+    const [returnVal, setReturnVal] = useState("");
   
     const navigate = useNavigate();
   
@@ -43,10 +43,10 @@ const Geometry = () => {
         CodRAlessPrepaidRevenue - (CodRAlessPrepaidRevenue * returnNum) / 100;
       const FinalTotalRevenue = PrepaidRevenue + Revenueafter20;
       const GST = FinalTotalRevenue * 0.05; // 5% GST
-      const PrepaidShipping =
-        totalOrderNum * 40 * (1 - cancellationNum / 100) * (prepaidNum / 100);
-      const CODShipping =
-        totalOrderNum * 70 * (1 - cancellationNum / 100) * (100-prepaid);
+      const PrepaidShipping =(PrepaidRevenue*8.6/100)
+       
+      const CODShipping =((Revenueafter20*14.87/100)/100)
+       
       const LabourCost = totalOrderNum * 2 * 20 * (1 - cancellationNum / 100);
       const FixCost = totalOrderNum * 2 * 10 * (1 - cancellationNum / 100);
       const MaterialCost = totalOrderNum * 2 * 35 * (1 - cancellationNum / 100);
@@ -70,7 +70,7 @@ const Geometry = () => {
       const AdCostAfterReturn = (TotalAdCost * 100) / FinalTotalRevenue;
       const FinalTotal = LabourCost + FixCost + Total
   
-      navigate("/geometry-results", {
+      navigate("/Panda-result", {
         state: {
           roas,
           totalOrder,
@@ -169,4 +169,4 @@ const Geometry = () => {
   )
 }
 
-export default Geometry
+export default Panda
