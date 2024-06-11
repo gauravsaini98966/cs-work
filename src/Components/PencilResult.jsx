@@ -104,6 +104,9 @@ const PencilResult = () => {
           <h4 className="values">Labour Cost: {LabourCost || "N/A"}</h4>
         </div>
         <div className="allResults">
+          <h4 className="values">Return loss: {LabourCost || "N/A"}</h4>
+        </div>
+        <div className="allResults">
           <h4 className="values">Fix Cost: {FixCost || "N/A"}</h4>
         </div>
         <div className="allResults">

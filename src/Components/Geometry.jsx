@@ -6,9 +6,9 @@ const Geometry = () => {
     const [roas, setRoas] = useState("");
     const [totalOrder, setTotalOrder] = useState("");
     const [adCost, setAdCost] = useState("");
-    const [cancellation, setCancellation] = useState("2.6");
-    const [prepaid, setPrepaid] = useState(71);
-    const [returnVal, setReturnVal] = useState(22);
+    const [cancellation, setCancellation] = useState("");
+    const [prepaid, setPrepaid] = useState("");
+    const [returnVal, setReturnVal] = useState("");
   
     const navigate = useNavigate();
   
@@ -46,11 +46,11 @@ const Geometry = () => {
       const PrepaidShipping =
         totalOrderNum * 40 * (1 - cancellationNum / 100) * (prepaidNum / 100);
       const CODShipping =
-        totalOrderNum * 70 * (1 - cancellationNum / 100) * (100-prepaid);
-      const LabourCost = totalOrderNum * 2 * 20 * (1 - cancellationNum / 100);
-      const FixCost = totalOrderNum * 2 * 10 * (1 - cancellationNum / 100);
-      const MaterialCost = totalOrderNum * 2 * 35 * (1 - cancellationNum / 100);
-      const Paymoney = TotalRevenue * 0.01; // 1% Paymoney
+       ( totalOrderNum * 70 * (1 - cancellationNum / 100) * (100-prepaid))/100;
+      const LabourCost = totalOrderNum *1.3  * 20* (1 - cancellationNum/100 );
+      const FixCost = totalOrderNum * 1.3 * 10 * (1 - cancellationNum / 100);
+      const MaterialCost = totalOrderNum * 1.3 * 90 * (1 - cancellationNum / 100);
+      const Paymoney = TotalRevenue * 1/100 // 1% Paymoney
       const InteractCharges = totalOrderNum * 2;
       const TotalExp =
         TotalAdCost +
